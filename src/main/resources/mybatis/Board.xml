@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--생성한 repository.class명-->
+<mapper namespace="com.project.board.repository.BoardRepository">
+
+   <select id="getBoardDBList" resultType="com.project.board.domain.Board$Response">
+     SELECT
+         BOARD_SEQ,
+         TITLE,
+         CONTENTS,
+         REG_DATE
+     FROM TB_BOARD
+     ORDER BY REG_DATE DESC
+   </select>
+
+    <select id="getDBBoard" parameterType="int" resultType="com.project.board.domain.Board$Response">
+        SELECT
+            BOARD_SEQ,
+            TITLE,
+            CONTENTS,
+            REG_DATE
+        FROM TB_BOARD
+        WHERE BOARD_SEQ = #{boardSeq}
+    </select>
+
+    <insert id="saveDBBoard" parameterType="com.project.board.domain.Board$Request" useGeneratedKeys="true" keyProperty="boardSeq">
+        INSERT INTO TB_BOARD
+            (
+             TITLE,
+             CONTENTS,
+             REG_DATE
+             )
+        VALUES (
+                #{title},
+                #{contents},
+                NOW()
+               )
+    </insert>
+
+    <update id="updateDBBoard" parameterType="com.project.board.domain.Board$Request">
+        UPDATE TB_BOARD
+        SET
+            TITLE = #{title},
+            CONTENTS =  #{contents}
+        WHERE BOARD_SEQ = #{boardSeq}
+    </update>
+
+    <delete id="deleteDBBoard" parameterType="int">
+        DELETE FROM TB_BOARD
+        WHERE BOARD_SEQ = #{boardSeq}
+    </delete>
+
+</mapper>
