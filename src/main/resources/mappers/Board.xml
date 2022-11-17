@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--생성한 repository.class명-->
-<mapper namespace="com.project.board.mappers.UserMapper">
+<mapper namespace="com.project.board.mappers.BoardMapper">
 
-   <select id="getBoardDBList" resultType="com.project.board.domain.db.UserDTO$Response">
+   <select id="getBoardDBList" resultType="com.project.board.domain.db.BoardDTO$Response">
      SELECT
          BOARD_SEQ,
          TITLE,
@@ -14,7 +14,7 @@
      ORDER BY REG_DATE DESC
    </select>
 
-    <select id="getDBBoard" parameterType="int" resultType="com.project.board.domain.db.UserDTOd$Response">
+    <select id="getDBBoard" parameterType="int" resultType="com.project.board.domain.db.BoardDTO$Response">
         SELECT
             BOARD_SEQ,
             TITLE,
@@ -24,7 +24,7 @@
         WHERE BOARD_SEQ = #{boardSeq}
     </select>
 
-    <insert id="saveDBBoard" parameterType="com.project.board.domain.db.UserDTO$Request" useGeneratedKeys="true" keyProperty="boardSeq">
+    <insert id="saveDBBoard" parameterType="com.project.board.domain.db.BoardDTO$Request" useGeneratedKeys="true" keyProperty="boardSeq">
         INSERT INTO TB_BOARD
             (
              TITLE,
@@ -38,7 +38,7 @@
                )
     </insert>
 
-    <update id="updateDBBoard" parameterType="com.project.board.domain.db.UserDTO$Request">
+    <update id="updateDBBoard" parameterType="com.project.board.domain.db.BoardDTO$Request">
         UPDATE TB_BOARD
         SET
             TITLE = #{title},
