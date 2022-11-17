@@ -1,7 +1,6 @@
 package com.project.board.domain.db;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.project.board.common.BoardType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

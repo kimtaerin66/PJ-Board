@@ -1,6 +1,6 @@
 package com.project.board.domain;
 
-import com.project.board.common.BoradErrorCode;
+import com.project.board.common.BoardErrorCode;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -31,7 +31,7 @@ public class ResponseVO {
     }
 
     //에러처리
-    public void setBoradErrorCode(BoradErrorCode code){
+    public void setBoradErrorCode(BoardErrorCode code){
         this.code = code.get_code();
         this.message = code.get_message();
     }
