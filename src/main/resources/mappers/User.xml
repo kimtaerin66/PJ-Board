@@ -58,7 +58,7 @@
                 );
     </insert>
 
-    <update id="setDBUserUpdate" parameterType="com.project.board.domain.db.BoardDTO$Update">
+    <update id="setDBUserUpdate" parameterType="com.project.board.domain.db.UserDTO$Update">
         UPDATE TBL_USERS
         SET USER_ID = #{userId},
             USER_PW    = #{userPw},
@@ -79,5 +79,17 @@
         FROM TBL_USERS
         WHERE USER_ID = #{userId}
     </delete>
+
+    <select id="getDBUserLogin" parameterType="com.project.board.domain.db.UserDTO$Login" resultType="com.project.board.domain.db.UserDTO$Response">
+        SELECT USER_PK,
+               USER_ID,
+               USER_PW,
+               USER_NAME,
+               USER_EMAIL,
+               USER_REG_DATE
+        FROM TBL_USERS
+        WHERE BINARY(USER_ID) = #{userId}
+          and BINARY(USER_PW) = #{userPw}
+    </select>
 
 </mapper>

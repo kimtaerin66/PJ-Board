@@ -20,4 +20,6 @@ public interface UserService {
     ResponseVO     duplicateId(String userId);
 
     ResponseVO     pwReset(String userId);
+
+    ResponseVO     loginUser(UserDTO.Login request);
 }

@@ -23,8 +23,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Resource
-   private UserMapper _userMapper;
-
+    private UserMapper _userMapper;
 
 
     /**
@@ -146,7 +145,7 @@ public class UserServiceImpl implements UserService {
     public ResponseVO duplicateId(String userId) {
         ResponseVO responseVO = new ResponseVO();
 
-        UserDTO.Response  result = _userMapper.getDBUserDuplicate(userId);
+        UserDTO.Response result = _userMapper.getDBUserDuplicate(userId);
 
         if (result == null) { //아이디 중복이 아니면
             responseVO.setBoradErrorCode(BoardErrorCode.B_200);
@@ -177,4 +176,37 @@ public class UserServiceImpl implements UserService {
 
         return responseVO;
     }
+
+    /**
+     * 사용자 로그인
+     *
+     * @param request
+     * @return
+     */
+    @Override
+    public ResponseVO loginUser(UserDTO.Login request) {
+        ResponseVO responseVO = new ResponseVO();
+
+        UserDTO.Response user = _userMapper.getDBUserDetail(request.getUserId());
+
+        if (user != null) {
+            UserDTO.Response loginUser = _userMapper.getDBUserLogin(request);
+            if (loginUser != null) {
+                responseVO.setResult(loginUser);
+                responseVO.setExceptionMessage("로그인 성공");
+                responseVO.setBoradErrorCode(BoardErrorCode.B_200);
+                return responseVO;
+            } else {
+                responseVO.setExceptionMessage("비밀번호가 일치하지 않습니다.");
+                responseVO.setBoradErrorCode(BoardErrorCode.B_1001);
+                return responseVO;
+            }
+        }
+        responseVO.setExceptionMessage("존재하지 않는 아이디입니다.");
+        responseVO.setBoradErrorCode(BoardErrorCode.B_1001);
+
+
+        return responseVO;
+    }
+
 }

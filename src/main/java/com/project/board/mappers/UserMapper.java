@@ -33,4 +33,6 @@ public interface UserMapper {
     void                            setDBUserPwReset(String userId);
 
 
+    UserDTO.Response                getDBUserLogin(UserDTO.Login request);
+
 }
