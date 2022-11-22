@@ -1,0 +1,29 @@
+
+#=================================
+#        Server ??
+#=================================
+
+server:
+  port: 8080
+  error:
+    include-exception: false
+    whitelabel:
+      enabled: true
+  connect-timeout: 3
+  read-timeout: 3
+  write-timeout: 3
+
+#=================================
+#        DB ??
+#=================================
+
+spring:
+  datasource:
+    username: root
+    password: pass0001!
+    db_schema: study
+    jdbc-url: jdbc:mariadb://127.0.0.1:3306/board?autoReconnect=true&serverTimezone=Asia/Seoul&useSSL=false&allowMultiQueries=true&useUnicode=ture&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false&&allowMultiQueries=true
+    driver-class-name: org.mariadb.jdbc.Driver
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
