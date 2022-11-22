@@ -1,0 +1,61 @@
+
+/*
+* 테이블 스타일
+*/
+
+h2.title{
+  font-size: 20px;
+  padding: 15px 0 16px 0;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+
+// list
+
+.list-wrap{
+  .list-h{
+    height: 42px;
+    padding: 10px 0;
+  }
+  .list-m{}
+  .list-b{
+    height: 80px;
+  }
+}
+
+//page-select
+
+.page-select{
+  border: 1px solid #d3d3d3;
+  width: 100px;
+  border-radius: 4px;
+  height: 32px;
+  padding-left: 12px;
+  transition: border ease 0.4s;
+  &:focus,
+  &:hover {
+    border: 1px solid $point-color;
+  }
+}
+
+.total_info{
+  display: inline-block;
+  //아래로 내리기
+  transform: translateY(5px);
+  font-size: 14px;
+  margin-left: 15px;
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #c7c8ca;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  strong {
+    color: #f47d14;
+    font-size: 15px;
+  }
+}
