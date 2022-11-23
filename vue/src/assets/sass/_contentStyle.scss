@@ -17,7 +17,6 @@ h2.title{
     height: 42px;
     padding: 10px 0;
     display: flex;
-    background-color: #cdc6f5;
     .list-h-r{
       display: flex;
       align-content: center;
@@ -78,4 +77,12 @@ h2.title{
     color: #f47d14;
     font-size: 15px;
   }
+}
+
+//table
+.table-list{
+  font-family: "Noto Sans KR Medium";
+  width: 100%;
+  text-align: center;
+  background-color: #cdc6f5;
 }
