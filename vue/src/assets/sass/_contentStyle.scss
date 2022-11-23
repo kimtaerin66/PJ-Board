@@ -16,6 +16,20 @@ h2.title{
   .list-h{
     height: 42px;
     padding: 10px 0;
+    display: flex;
+    background-color: #cdc6f5;
+    .list-h-r{
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      .list-h-l{
+      }
+      .list-h-r{
+      }
+      .setDate {
+        display: flex;
+      }
+    }
   }
   .list-m{}
   .list-b{
@@ -32,11 +46,17 @@ h2.title{
   height: 32px;
   padding-left: 12px;
   transition: border ease 0.4s;
+  appearance: none;
+  background: #fff url(../images/icon_selectbox_arrow.png) no-repeat
+  calc(100% - 10px) 50%;
   &:focus,
   &:hover {
     border: 1px solid $point-color;
   }
+
+
 }
+
 
 .total_info{
   display: inline-block;
