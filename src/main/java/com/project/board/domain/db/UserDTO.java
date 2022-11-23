@@ -28,6 +28,8 @@ public class UserDTO {
         private String userName;
         @ApiModelProperty(notes = "이메일", required = false)
         private String userEmail;
+        @ApiModelProperty(notes = "핸드폰 번호", required = false)
+        private String userPhone;
         @ApiModelProperty(value = "등록 날짜", example = "yyyy-MM-ddThh:mm:ss")
         private Date userRegDate;
 
@@ -46,7 +48,10 @@ public class UserDTO {
         @ApiModelProperty(notes = "이름", required = true, example = "김태린")
         @NotBlank(message = "userName 이름은 필수 입력 항목입니다.")
         private String userName;
+        @ApiModelProperty(notes = "이메일", required = false)
         private String userEmail;
+        @ApiModelProperty(notes = "핸드폰 번호", required = false)
+        private String userPhone;
 
     }
 
@@ -63,6 +68,8 @@ public class UserDTO {
         private String userName;
         @ApiModelProperty(notes = "이메일", required = false)
         private String userEmail;
+        @ApiModelProperty(notes = "핸드폰 번호", required = false)
+        private String userPhone;
 
     }
 
