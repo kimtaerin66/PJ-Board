@@ -112,12 +112,19 @@ nav {
   }
 }
 
+button {
+  word-spacing: normal;
+  line-height: normal;
+  font-weight: 400;
+}
+
 .location-wrap {
   width: 100%;
   background-color: #fafafa;
   height: 29px;
   font-family: "Noto Sans KR Light";
   justify-content: flex-end;
+
   .location-box {
     width: 100%;
     height: 100%;
@@ -125,22 +132,25 @@ nav {
     display: flex;
     align-items: center;
     justify-content: end;
+
     .location {
       display: flex;
       align-items: center;
       margin-right: 55px;
+
       li {
         color: #565656;
         font-size: 13px;
 
-      &::before {
-        content: "";
-        display: inline-block;
-        background: url(../images/icon_location.png) no-repeat 0;
-        width: 6px;
-        height: 11px;
-        margin:0 5px;
-      }
+        &::before {
+          content: "";
+          display: inline-block;
+          background: url(../images/icon_location.png) no-repeat 0;
+          width: 6px;
+          height: 11px;
+          margin: 0 5px;
+        }
+
         &:first-child {
           background: url(../images/icon_home.png) no-repeat 0;
           display: inline-block;

@@ -13,6 +13,7 @@ h2.title{
 // list
 
 .list-wrap{
+
   .list-h{
     height: 42px;
     padding: 10px 0;
@@ -30,7 +31,9 @@ h2.title{
       }
     }
   }
-  .list-m{}
+  .list-m{
+
+  }
   .list-b{
     height: 80px;
   }
@@ -81,8 +84,28 @@ h2.title{
 
 //table
 .table-list{
-  font-family: "Noto Sans KR Medium";
+  border-collapse: collapse; //테이블간격 붙이기
+  font-family: "Noto Sans KR Regular";
   width: 100%;
   text-align: center;
-  background-color: #cdc6f5;
+  font-size: 14px;
+  width: 100%;
+  border-top: 1px solid #0c3a52;
+  border-bottom: 1px solid #cecece;
+  table-layout: fixed;
+
+  th {
+    height: 40px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #dadada;
+  }
+  td{
+    height: 40px;
+    line-height: 20px;
+    border-bottom: 1px solid #f2f2f2;
+    text-align: center;
+    padding: 0 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
 }
